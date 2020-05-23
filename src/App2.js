@@ -22,6 +22,10 @@ function App2() {
     }, []); // deps를 안 주면 update용으로 매 렌더 시에 실행된다.
                   // 최초의 didMount시에만 한 번 하고 싶으면 deps를 이렇게 설정해 줘야 함
 
+    const handleChange = (e) => {
+        console.log(e.target.value);
+    };
+
     // 다중 조건문: {(조건) && 나오게 할 것}
     // html 출력 시에는 if문 등을 사용할 수 없기 때문에 이렇게 씀
     const html = music.map((m) =>
@@ -54,7 +58,7 @@ function App2() {
             <table className={"table"}>
                 <tr>
                     <td>
-                        <input type={"text"} className={"input-sm"} size={"25"} />
+                        <input type={"text"} className={"input-sm"} size={"25"} onChange={handleChange}/>
                     </td>
                 </tr>
             </table>
